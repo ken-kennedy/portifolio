@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,600;1,600&display=swap');
+
+:root {
+    --cor-primaria: #01204E; /*variaveis para não precisar repetir os códigos das cores várias vezes*/
+    --cor-secundaria: #F6DCAC;
+    --cor-terciaria: #FEAE6F;
+    --cor-hover: #028391;
+
+    --fonte-primaria: "Montserrat", sans-serif;
+    --fonte-secundaria: "Krona One", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /*height: 100vh; /*para que todo o conteudo esteja visivel em toda a pagina, altura, 100 da pagina*/
+    box-sizing: border-box;
+    background-color: var(--cor-primaria); /*Fundo da tela*/
+    color: var(--cor-secundaria); /*Cor do texto*/ /*var é para aplicar a variavel*/
+}
+
+.cabecalho{
+    padding: 2% 0% 0% 20%; /*4 numeros indica a distancia dos 4 lados, primeiro superior, segunda a dir, terceiro inferior e quarto a esquerda */
+}
+
+.cabecalho__menu{
+    display: flex;
+    gap: 80px;
+    font-family: var(--fonte-primaria);
+    font-size: 2rem; /*rem serve p/ substituir o px afim do usuario poder mudar o tamanho de visualiação do tamanho do conteudo na página. 1 rem equivale a 16px.*/
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;    
+}
+
+.sobremim{
+    padding: 5% 20%; /*margem horizontal e vertical*/
+    display: flex; /*para centralizar e deixar todos os elementos no mesmo padrão, na mesma linha por exem.*/
+    align-items: center; /*Centralizar o elemento*/
+    justify-content: space-between;
+           
+}
+
+.sobremim_conteudo{
+    width: 615px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /*Espaçamento entre um elemento e outro*/ 
+}
+
+.sobremim_conteudo_titulo{
+    font-size: 1,88rem; /* tamanho da fonte, do texto*/
+    font-family: var(--fonte-secundaria); /* fonte do texto*/
+}
+
+.sobremim_conteudo_paragrafo{
+    font-size: 1,5rem;
+    font-family: var(--fonte-primaria);
+}
+
+.titulo-destaque {
+    color: var(--cor-terciaria); /*Cor do texto*/
+}
+
+.nome {
+    color: red; /*Cor do texto*/
+}
+
+.conteudoprincipal {
+    padding: 5% 20%; /*margem horizontal e vertical*/
+    display: flex; /*para centralizar e deixar todos os elementos no mesmo padrão, na mesma linha por exem.*/
+    align-items: center; /*Centralizar o elemento*/
+    justify-content: space-between;  
+    gap: 82px;  
+}
+
+.conteudoprincipal__conteudo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /*Espaçamento entre um elemento e outro*/
+}
+
+.conteudoprincipal__conteudo__titulo{
+    font-size: 2.25rem; /* tamanho da fonte, do texto*/
+    font-family: var(--fonte-secundaria); /* fonte do texto*/
+}
+
+.conteudoprincipal__conteudo__paragrafo{
+    font-size: 1.5rem;
+    font-family: var(--fonte-primaria);
+}
+
+.conteudoprincipal__links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;    
+}
+
+.conteudoprincipal__links__subtitulo{
+   font-family: var(--fonte-primaria);
+   font-weight: 400; 
+   font-size: 1.5rem;
+
+}
+
+.conteudoprincipal__links__navegacao {
+    /* background-color: #22D4FD; */
+    display: flex;
+    justify-content: center; /*Para colocar o icone e o elemento no centro, alinhado*/
+    gap: 16px;
+    border: 2px solid var(--cor-terciaria); /* tipo de borda de algum contorno, tamanho da linha e a cor */
+    width: 50%; 
+    text-align: center;
+    border-radius: 8px; /* forma da volta onde faz o contorno */
+    font-size: 1.5rem;
+    padding: 21.5px 0; /*define a distancia do elemento ate a borda */
+    text-decoration: none; /* para tirar o sublinho que esta no texto q vai de forma automatica */
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-primaria);
+    font-weight: 600; /* Peso da fonte*/
+} 
+
+.conteudoprincipal__links__link:hover{ /*hover - é para mudar a cor de um botão ao passar o mouse encima*/
+    background-color: var(--cor-hover);
+}
+
+.conteudoprincipal__imagem {
+    width: 50%; /*altera a largura e a altura do elemento na pagina*/
+}
+
+.rodape{
+    padding: 1% 0%;
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 1.25rem;
+    text-align: center;
+    color: var(--cor-primaria);
+    background-color: var(--cor-terciaria);
+}
+
+/*break points. Nome dado para quando quero quebrar layouts de acordo com o tamanho da tela*/
+
+@media (max-width:1200px) {  /*quando quero criar uma tela responsiva para abrir em mobile. Aqui estou falando que quando o px da minha tela ultrapassar o tamanho definido, irei colocar as configurações abaixo*/
+    
+    .cabecalho {
+        padding: 10%; /*so afastei da margem superior*/
+    }
+
+    .cabecalho__menu {
+        justify-content: center; /* centralizei os itens dentro dessa classe. Obs: já havia aplicado display flex anteriormente no meu codigo*/
+    }
+
+    .conteudoprincipal {   /*referenciei oque vai muda quando ultrapassar o tamanho da tela definido*/
+        flex-direction: column-reverse;  /* e quando ultrapassar o tamanho definido coloquei a imagem para cima*/
+        padding: 5%; /*diminui o espaçamento das minhas margens na minha tela menor*/
+    }
+
+    .conteudoprincipal__conteudo {
+        padding: auto; /*coloquei a pagina pegar de forma automatica o espaçamento*/
+    }
+
+}
